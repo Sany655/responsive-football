@@ -27,33 +27,29 @@ body{
     background: #2D25A0;
     color: white;
     margin-bottom: 80px;
+    overflow: hidden;
 }
 
-.top-banner-container{
-    max-width: 75%;
+.top-banner-row{
+    width: 80%;
     display: flex;
     margin: 0px auto;
-    padding: 80px 0px;
     justify-content: space-between;
     align-items: center;
 }
 
-.top-banner-text{
+.top-banner-colum{
     width: 50%;
-}
-
-
-.top-banner-image{
-    width: 50%;
+    padding: 50px;
 }
 
 .top-banner-title{
-    font-size: 74px;
+    font-size: 65px;
     margin: 0;
     font-weight: 600;
 }
 
-.top-banner-image>img{
+img.top-banner-image{
     width: 100%;
     height: auto;
 }
@@ -62,22 +58,21 @@ body{
 .top-banner .primary-button .fas.fa-arrow-right{
     padding: 0px 0px 0px 10px;
     transition-property:padding;
-    transition-duration: 0.2s;
+    transition-duration: 0.8s;
 }
 
 .top-banner:hover .primary-button .fas.fa-arrow-right{
-    padding: 0px 0px 0px 400px;
+    padding: 0px 0px 0px 100px;
 }
 
 /* set transition for banner image */
-.top-banner-image>img{
-    margin-left: 110px;
-    transition-property:margin-left;
-    transition-duration: 0.2s;
+img.top-banner-image{
+    transition-property:width;
+    transition-duration: 0.8s;
 }
 
-.top-banner:hover .top-banner-image>img{
-    margin-left: 0px;
+.top-banner:hover img.top-banner-image{
+    width: 110%;
 }
 
 
@@ -102,4 +97,85 @@ body{
 
 .card>img{
     width: 100%;
+}
+
+
+/*----------------------------------------------
+                footer section 
+-----------------------------------------------*/
+
+.footer{
+    margin: 61px 0px;
+    text-align: center;
+}
+
+img.logo{
+    width: 500px;
+}
+
+.social-icons{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.social-icon{
+    background: #E6E6E7;
+    padding: 5px;
+    margin: 0px 10px;
+    border-radius: 58px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+}
+
+.copy-right{
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+
+/*----------------------------------------------
+                media queries
+-----------------------------------------------*/
+
+@media (max-width: 992px) {
+
+/*------- top banner section ---------*/
+    .top-banner-row{
+        flex-direction: column;
+    }
+
+    .top-banner-colum{
+        width: 100%;
+    }
+
+
+/*--------- player section ----------*/
+
+    .players-section{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 688px) { /* for mobile =/
+
+/*------- top banner section ---------*/
+
+    .top-banner-title{
+        font-size: 35px;
+    }
+
+/*--------- player section ----------*/
+    .players-section{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+/*--------- footer section ----------*/
+    img.logo{
+        width: 300px;
+    }
 }
